@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
+body {
+  padding: 10px;
+  margin: 0;
+  width: 400px;
+  font-family: "Roboto", sans-serif;
+  background-color: #fcf6f5ff;
+  padding-bottom: 20px;
+  text-align: center;
+  transition: background 2 ease;
+}
+header {
+  display: inline-block;
+  font-family: "Roboto";
+  font-size: 20px;
+  margin-top: -25px;
+  margin-bottom: -50px;
+}
+h1 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 32px;
+  display: inline-block;
+  font-family: "Roboto", cursive;
+}
+main {
+  margin-top: 35px;
+  text-align: center;
+  margin-right: 0;
+}
+
+svg {
+  text-align: center;
+}
+#nbi {
+  font-size: 21px;
+  margin: 0;
+}
+circle {
+  fill: #fcf6f5ff;
+  stroke: #2bae66ff;
+  stroke-width: 4;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 1000;
+  animation: rotate 4s linear infinite;
+}
+text {
+  font-weight: 500;
+  font-size: 21px;
+}
+
+#darkmodeImg {
+  height: 30px;
+  width: 30px;
+}
+
+#darkmodeButton {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.darkmode {
+  text-align: right;
+}
+
+@keyframes rotate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

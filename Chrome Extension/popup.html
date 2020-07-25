@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>yoyo</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Your Detox Report</h1>
+    </header>
+    <main>
+      <section class="titlePage">
+        <div id="nbi">Next Break In</div>
+        <svg height="100" width="100" style="transform: rotate(270deg);">
+          <circle cx="50" cy="50" r="40" />
+          <text
+            id="timeFromBreak"
+            text-anchor="middle"
+            x="50"
+            y="-50"
+            fill="#2bae66ff"
+            transform="rotate(90)"
+          ></text>
+        </svg>
+      </section>
+      <section class="darkmode">
+        <button id="darkmodeButton" type="button">
+          <img
+            src="https://image.flaticon.com/icons/svg/61/61412.svg"
+            alt="Darkmode"
+            id="darkmodeImg"
+          />
+        </button>
+      </section>
+    </main>
+    <script src="./popupJS/darkmode.js"></script>
+    <script src="./popupJS/showtime.js"></script>
+    <script src="./popupJS/tips.js"></script>
+  </body>
+</html>
