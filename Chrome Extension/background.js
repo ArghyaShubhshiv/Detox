@@ -1,6 +1,5 @@
-var id;
 var time;
-var breakTime = 60000 * 1;
+var breakTime = 60000 * 1; //in milliseconds
 const opt_breakStart = {
   type: "basic",
   title: "Breaktime!!!",
@@ -15,11 +14,11 @@ const opt_breakOver = {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  time = 60; //calculates the time left for the next break
   timer();
 });
 
 function timer() {
+  time = 60; //in seconds
   message = { msg: "started" };
   chrome.runtime.sendMessage(message);
   id = setInterval(function () {
@@ -37,12 +36,9 @@ function timer() {
       chrome.runtime.sendMessage(message);
       setTimeout(function () {
         chrome.notifications.create("breakOver", opt_breakOver);
-        timer();
+        clearInterval(id)
       }, breakTime);
     }
   }, 1000);
-}
-
-function stop(t) {
-  clearInterval(t);
+  timer();
 }
