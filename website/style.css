@@ -6,6 +6,7 @@ html{
 body{
   margin: 0;
   padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 /* The below code is for the navbar*/
@@ -14,28 +15,29 @@ nav {
   display: block;
   position: fixed;
   overflow: hidden;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  position: fixed;
+  padding-top: 1%;
+  padding-bottom: 1%;
   top: 0;
   width: 100%;
   background-color: #ffffff;
+  z-index: 2;
 }
 nav a {
   float: right;
-  font-family: 'Roboto Condensed', sans-serif;
   font-size: 32px;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   margin-right: 5%;
   color: #000000;
+  margin-bottom: -15px;
 }
-a:hover, a:focus, a:visited{
+a:visited{
   color: black;
 }
-#logo{
+#logoContainer{
   float: left;
+  margin-left: -5%;
 }
 
 /* The below code is for the sections and their descriptions*/
@@ -55,7 +57,41 @@ section{
 
 /* The below code is for the image slider*/
 main{
-    background: #7CC0D8;
-    padding-top: 150px;
+    background: #7cc0d8;
+    padding-top: 100px;
     padding-bottom: 20px;
+}
+div{
+  margin: auto 0;
+  width: 100%;
+  height: 90vh;
+  opacity: 90%;
+  background: url("./imgs/family.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slides{
+  background: url("./imgs/man_on_laptop.svg");
+}
+#detox_condition{
+  position: absolute;
+  padding-top: 125px;
+  left: 37%;
+  font-size: 56px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  opacity: 90%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 735px) {
+  nav a {
+    margin-right: 1%;
+  }
+}
+
+@media only screen and (max-width: 606px) {
+  nav a {
+    font-size: 24px;
+  }
 }
