@@ -1,5 +1,3 @@
-var time;
-var breakTime = 60000 * 1; //in milliseconds
 const opt_breakStart = {
   type: "basic",
   title: "Breaktime!!!",
@@ -13,16 +11,12 @@ const opt_breakOver = {
   iconUrl: "icons/icon128.png",
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  timer();
-});
-
 function timer() {
-  time = 60; //in seconds
-  message = { msg: "started" };
+  let time = 10; //in seconds
+  let message = { msg: "started" };
   chrome.runtime.sendMessage(message);
-  id = setInterval(function () {
-    if (time > 0) {
+  let id = setInterval(function () {
+    if (time >= 0) {
       let mins = Math.floor(time / 60);
       let sec = time % 60;
       message = { msg: mins + ":" + sec };
@@ -34,11 +28,15 @@ function timer() {
       chrome.notifications.create("breakStart", opt_breakStart);
       message = { msg: "break" };
       chrome.runtime.sendMessage(message);
-      setTimeout(function () {
-        chrome.notifications.create("breakOver", opt_breakOver);
-        clearInterval(id)
-      }, breakTime);
+      clearInterval(id);
     }
   }, 1000);
-  timer();
 }
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.msg == "button_clicked") {
+    timer();
+  }
+});
+
+timer();
