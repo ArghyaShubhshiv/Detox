@@ -64,6 +64,21 @@ text {
   text-align: right;
 }
 
+#restartTimer {
+  display: none;
+  outline: none;
+  border: 1px solid #2bae66ff;
+  text-align: center;
+  color: #2bae66ff;
+  margin: auto;
+  height: 30px;
+  background: transparent;
+  transition: 0.25s ease-in;
+}
+#restartTimer:hover {
+  background: rgba(252, 246, 245, 0.836);
+}
+
 @keyframes rotate {
   to {
     stroke-dashoffset: 0;
