@@ -15,7 +15,7 @@ function timer() {
   let time = 60 * 60; //in seconds
   let message = { msg: "started" };
   chrome.runtime.sendMessage(message);
-  let id = setInterval(function () {
+  var id = setInterval(function () {
     if (time >= 0) {
       if (time == 0) {
         chrome.tabs.create({ url: "popup.html" });
@@ -39,6 +39,7 @@ function timer() {
 chrome.runtime.onMessage.addListener((message) => {
   if (message.msg == "button_clicked") {
     timer();
+    chrome.runtime.sendMessage({ msg: "restart" });
   }
 });
 
