@@ -10,6 +10,8 @@ chrome.runtime.onMessage.addListener((message) => {
     settingsAtStart();
   } else if (message.msg == "break") {
     settingsAtBreak();
+  } else if (message.msg == "restart") {
+    settingsAtStart();
   } else {
     showTime.textContent = message.msg;
   }
