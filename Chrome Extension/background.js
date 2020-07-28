@@ -12,11 +12,14 @@ const opt_breakOver = {
 };
 
 function timer() {
-  let time = 10; //in seconds
+  let time = 60 * 60; //in seconds
   let message = { msg: "started" };
   chrome.runtime.sendMessage(message);
   let id = setInterval(function () {
     if (time >= 0) {
+      if (time == 1) {
+        chrome.tabs.create({ url: "popup.html" });
+      }
       let mins = Math.floor(time / 60);
       let sec = time % 60;
       message = { msg: mins + ":" + sec };
