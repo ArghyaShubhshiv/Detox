@@ -13,7 +13,8 @@ footer {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #7cc0d8;
-  font-weight: bold;
+  font-weight: 200;
+  font-size: 15px;
   width: 100%;
 }
 /* The below code is for the navbar*/
@@ -117,6 +118,15 @@ div {
   text-align: center;
   opacity: 90%;
   z-index: 1;
+}
+
+#about a {
+  text-decoration: underline;
+  transition: 0.25s;
+}
+#about a:hover {
+  cursor: pointer;
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 855px) {
