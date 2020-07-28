@@ -17,7 +17,7 @@ function timer() {
   chrome.runtime.sendMessage(message);
   let id = setInterval(function () {
     if (time >= 0) {
-      if (time == 1) {
+      if (time == 0) {
         chrome.tabs.create({ url: "popup.html" });
       }
       let mins = Math.floor(time / 60);
